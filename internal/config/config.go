@@ -6,6 +6,8 @@ import (
 	"os"
 
 	"github.com/spf13/viper"
+
+	"mcp_tstr/internal/constants"
 )
 
 // Config represents the application configuration
@@ -95,9 +97,9 @@ func Load() (*Config, error) {
 
 	// Set defaults
 	viper.SetDefault("default_server", "")
-	viper.SetDefault("default_provider", "ollama")
-	viper.SetDefault("default_model", "llama2")
-	viper.SetDefault("logging.level", "info")
+	viper.SetDefault("default_provider", constants.DefaultProvider)
+	viper.SetDefault("default_model", constants.DefaultModel)
+	viper.SetDefault("logging.level", constants.DefaultLogLevel)
 	viper.SetDefault("logging.to_file", false)
 
 	// Set up environment variable mappings
@@ -120,14 +122,14 @@ func Load() (*Config, error) {
 
 // LoadMCPConfig loads the MCP servers configuration from mcp.json
 func LoadMCPConfig() (*MCPConfig, error) {
-	file, err := os.ReadFile("mcp.json")
+	file, err := os.ReadFile(constants.MCPConfigFileName)
 	if err != nil {
-		return nil, fmt.Errorf("failed to read mcp.json: %w", err)
+		return nil, fmt.Errorf("failed to read %s: %w", constants.MCPConfigFileName, err)
 	}
 
 	var mcpConfig MCPConfig
 	if err := json.Unmarshal(file, &mcpConfig); err != nil {
-		return nil, fmt.Errorf("failed to parse mcp.json: %w", err)
+		return nil, fmt.Errorf("failed to parse %s: %w", constants.MCPConfigFileName, err)
 	}
 
 	return &mcpConfig, nil

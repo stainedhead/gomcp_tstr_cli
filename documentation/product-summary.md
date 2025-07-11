@@ -31,7 +31,7 @@
 - **Multi-Server Chat**: Simultaneous access to tools from multiple MCP servers
 
 ### Configuration Management
-- **YAML Configuration**: Human-readable configuration files
+- **YAML Configuration**: Human-readable configuration files (mcp_tstr.config)
 - **Environment Variables**: Override configuration with environment variables
 - **Default Values**: Sensible defaults for quick setup
 - **Provider-Specific Settings**: Tailored configuration for each AI provider

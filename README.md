@@ -38,7 +38,7 @@ go mod tidy
 
 ### Application Configuration
 
-Create a `mcp_tstr.config.yaml` file in your working directory:
+Create a `mcp_tstr.config` file in your working directory:
 
 ```yaml
 # Default server to use when none is specified
@@ -118,7 +118,7 @@ Create a `mcp.json` file that defines your MCP servers:
 
 ### Global Flags
 
-- `--config`: Specify config file (default: ./mcp_tstr.config.yaml)
+- `--config`: Specify config file (default: ./mcp_tstr.config)
 - `--server, -s`: MCP server name to interact with
 - `--provider-name, -p`: Model provider to use for chat
 - `--log-level, -l`: Logging level (debug, info, warn, error)

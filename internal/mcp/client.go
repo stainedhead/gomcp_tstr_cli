@@ -10,6 +10,7 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"mcp_tstr/internal/config"
+	"mcp_tstr/internal/constants"
 )
 
 // Client represents an MCP client wrapper
@@ -95,7 +96,7 @@ func (m *Manager) initializeServer(name string, serverConfig config.MCPServer) (
 	}
 
 	// Create MCP client
-	mcpClient := mcp.NewClient("mcp_tstr", "1.0.0", &mcp.ClientOptions{})
+	mcpClient := mcp.NewClient(constants.AppName, constants.AppVersion, &mcp.ClientOptions{})
 
 	// Connect to the server
 	session, err := mcpClient.Connect(ctx, transport)
