@@ -1,0 +1,47 @@
+# mcp_tstr Configuration File
+# This file contains the configuration for the MCP testing CLI tool
+
+# Default server to use when none is specified
+default_server: "filesystem"
+
+# Default provider to use for chat functionality
+default_provider: "ollama"
+
+# Default model to use
+default_model: "llama2"
+
+# Logging configuration
+logging:
+  level: "info"
+  to_file: false
+
+# Provider configurations
+providers:
+  # Ollama configuration
+  ollama:
+    endpoint: "http://localhost:11434"
+    model: "llama2"
+  
+  # OpenAI configuration (not yet implemented)
+  openai:
+    api_key: "${OPENAI_API_KEY}"
+    model: "gpt-4"
+    base_url: "https://api.openai.com/v1"
+    temperature: "0.7"
+  
+  # AWS Bedrock configuration (not yet implemented)
+  aws_bedrock:
+    region: "us-east-1"
+    access_key_id: "${AWS_ACCESS_KEY_ID}"
+    secret_access_key: "${AWS_SECRET_ACCESS_KEY}"
+    model: "anthropic.claude-3-sonnet-20240229-v1:0"
+  
+  # Google AI configuration (not yet implemented)
+  google_ai:
+    api_key: "${GOOGLE_AI_API_KEY}"
+    model: "gemini-pro"
+  
+  # Anthropic configuration (not yet implemented)
+  anthropic:
+    api_key: "${ANTHROPIC_API_KEY}"
+    model: "claude-3-sonnet-20240229"

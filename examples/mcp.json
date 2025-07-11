@@ -1,0 +1,43 @@
+{
+  "servers": {
+    "filesystem": {
+      "name": "filesystem",
+      "command": ["mcp-server-filesystem"],
+      "args": ["/path/to/allowed/directory"],
+      "transport": {
+        "type": "stdio"
+      },
+      "env": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin"
+      }
+    },
+    "web_search": {
+      "name": "web_search",
+      "transport": {
+        "type": "http",
+        "host": "localhost",
+        "port": 8080,
+        "path": "/mcp"
+      }
+    },
+    "database": {
+      "name": "database",
+      "command": ["python", "-m", "mcp_server_database"],
+      "transport": {
+        "type": "stdio"
+      },
+      "env": {
+        "DATABASE_URL": "sqlite:///example.db"
+      }
+    },
+    "sse_server": {
+      "name": "sse_server",
+      "transport": {
+        "type": "sse",
+        "host": "localhost",
+        "port": 9090,
+        "path": "/events"
+      }
+    }
+  }
+}
