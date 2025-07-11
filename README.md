@@ -36,9 +36,17 @@ go mod tidy
 
 ## Configuration
 
+**Note**: Configuration files (`mcp_tstr.config` and `mcp.json`) are not tracked in git to prevent accidental commit of sensitive information. Copy the examples to create your local configuration files.
+
 ### Application Configuration
 
-Create a `mcp_tstr.config` file in your working directory:
+Create a `mcp_tstr.config` file in your working directory by copying from the example:
+
+```bash
+cp examples/mcp_tstr.config mcp_tstr.config
+```
+
+Then edit the configuration file:
 
 ```yaml
 # Default server to use when none is specified
@@ -76,7 +84,13 @@ providers:
 
 ### MCP Server Configuration
 
-Create a `mcp.json` file that defines your MCP servers:
+Create a `mcp.json` file by copying from the example:
+
+```bash
+cp examples/mcp.json mcp.json
+```
+
+Then edit the file to define your MCP servers:
 
 ```json
 {
