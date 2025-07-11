@@ -36,12 +36,13 @@ Thumbs.db
 # Log files
 *.log
 
-# Local configuration files (exclude from repo, keep examples)
-/mcp_tstr.config
-/mcp.json
+# Local configuration files (copy from examples/ to use)
+# Keep examples/ directory files for reference
+mcp_tstr.config
+mcp.json
 
 # Build artifacts
-/mcp_tstr
+mcp_tstr
 /dist/
 /build/
 
