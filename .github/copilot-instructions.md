@@ -16,7 +16,7 @@
 - product documentation should be used to understand context and features of the project. 
 - ./documentation/product-overview.md should be referenced to understand the product and its features.
 - ./readme.md should be used to understand the project structure and how to run the project.
-- ./readme.md, ./documentation/product-overview.md, and ./documentation/technical-details.md should be updated as required to keep code and documentation in sync.
+- ./readme.md, ./documentation/product-overview.md, and ./documentation/technical-summary.md should be updated as required to keep code and documentation in sync.
 - a directory named "prompts" should be created to hold prompt files used for generating code or documentation.
 
 
